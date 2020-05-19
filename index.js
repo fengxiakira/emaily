@@ -2,10 +2,18 @@
 // import express, require to get access to express library
 // deployment target https://git.heroku.com/still-castle-71616.git
 const express = require('express');
+// set up passport for authentication
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // common js modules use require
 // es2015 modules : import express from 'express',front-end
 // create express app
 const app = express();
+// new GoogleStrategy() -> new instance of Google Strategy authentication user with google
+// parameter(pass configuration)
+// passport.use:strategy regeister
+passport.use(new GoogleStrategy());
+
 // route handler
 //app.get create a new route handler
 // get watch for incoming requests with this method
@@ -13,10 +21,10 @@ const app = express();
 // req,request(incoming request)
 // res,outgoing response
 // res.send: send some JSON back to who ever made their request
-app.get('/', (req, res) => {
-    res.send({ hi: 'there' });
+// app.get('/', (req, res) => {
+//     res.send({ hi: 'there' });
 
-});
+// });
 
 // node that it wants to listen for incoming traffic on port 5000
 // app.listen(5000);
