@@ -7,12 +7,27 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 // common js modules use require
 // es2015 modules : import express from 'express',front-end
+// js文件不需要打.js
+const keys = require('./config/key');
 // create express app
 const app = express();
 // new GoogleStrategy() -> new instance of Google Strategy authentication user with google
 // parameter(pass configuration)
 // passport.use:strategy regeister
-passport.use(new GoogleStrategy());
+// new GoogleStrategy()的parameter是在Google注册过的client id & client secret
+// second argument to google strategy is arrow function
+passport.use(new GoogleStrategy({
+    clientID: keys.googleClientID,
+    clientSecret: keys.googleClientSecret,
+    // handle user after with URL and code after get permission
+    callbackURL: '/auth/google/callback'
+},
+    (accessToken) => {
+        console.log(accessToken);
+    }
+)
+
+);
 
 // route handler
 //app.get create a new route handler
