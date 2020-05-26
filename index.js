@@ -2,6 +2,8 @@
 // import express, require to get access to express library
 // deployment target https://git.heroku.com/still-castle-71616.git
 const express = require("express");
+const keys = require("./config/key");
+// const mongoose = require("mongoose");
 // set up passport for authentication
 
 // create express app
@@ -11,6 +13,7 @@ const app = express();
 
 // attach require 内的function to app,也就是express()
 require('./routes/authRoute')(app);
+mongoose.connect(keys.mongoURI);
 
 
 // node that it wants to listen for incoming traffic on port 5000
