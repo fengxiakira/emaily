@@ -6,11 +6,15 @@ const keys = require("./config/key");
 const mongoose = require("mongoose");
 // set up passport for authentication
 
-// create express app
+
+// models(collection in MongoDB)
+require('./models/user');
 // passport.js haven't any output,不需要赋给const
 require('./services/passport');
+
 // connect to mongodb
 mongoose.connect(keys.mongoURI);
+// create express app
 const app = express();
 
 // attach require 内的function to app,也就是express()
