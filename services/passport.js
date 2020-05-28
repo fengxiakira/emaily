@@ -1,7 +1,7 @@
 // passport configuration
 // new GoogleStrategy() -> new instance of Google Strategy authentication user with google
 // parameter(pass configuration)
-// passport.uase:strategy regeister
+// passport.use:strategy regeister
 // new GoogleStrategy()的parameter是在Google注册过的client id & client secret
 
 const passport = require("passport");
