@@ -21,7 +21,7 @@ passport.serializeUser((user, done) => {
     done(null, user.id);
 });
 
-// take token(id) out and back to user model
+// take token(id) out and back to user model instance
 // mongoose is Asychronous, use then after
 passport.deserializeUser((id, done) => {
     User.findById(id).then(user => {
@@ -31,6 +31,7 @@ passport.deserializeUser((id, done) => {
 })
 
 passport.use(
+    // could replace by facebook , linkedin. ...
     new GoogleStrategy(
         {
             clientID: keys.googleClientID,

@@ -27,5 +27,17 @@ module.exports = (app) => {
     // passport handle code,passport to see the code
     app.get("/auth/google/callback", passport.authenticate("google"));
 
+    // Log our handler 
+    app.get('/auth/logout', (req, res) => {
+        req.logout();
+        // notify user, return underfined/nothing
+        res.send(req.user);
+    });
+
+    // use model instance added to req object as 'req.user'
+    app.get('/api/current_user', (req, res) => {
+        // get access to user, return a user instance
+        res.send(req.user);
+    });
 }
 
