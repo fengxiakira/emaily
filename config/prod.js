@@ -6,6 +6,7 @@ module.exports = {
     googleClientSecret: process.env.GOOGLE_CLIENT_SECRET,
 
     mongoURI: process.env.MONGODB_URI,
-    cookieKey: process.env.COOKIE_KEY
+    cookieKey: process.env.COOKIE_KEY,
+    googleRedirectURI: 'https://survey-emaily-online.herokuapp.com'
 
 };

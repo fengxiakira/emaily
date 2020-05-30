@@ -37,7 +37,9 @@ passport.use(
             clientID: keys.googleClientID,
             clientSecret: keys.googleClientSecret,
             // handle user after with URL and code after get permission
-            callbackURL: "/auth/google/callback"
+            // Google stratge to decide the domain
+            callbackURL: "/auth/google/callback",
+            proxy: true
         },
         // callback
         // Google strategey run sign, terminals
