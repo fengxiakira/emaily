@@ -35,8 +35,9 @@ app.use(
     )
 );
 
-// tell passport to use cookies
+// tell passport to use cookies,Start up express for this request lifecycle
 app.use(passport.initialize());
+// Kick this person into the oauth flow.  When they're done, save info to their 'session' that indicates we know who they are
 app.use(passport.session());
 
 // attach require 内的function to app,也就是express()

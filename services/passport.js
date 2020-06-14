@@ -16,12 +16,13 @@ const User = mongoose.model('users');
 
 // user model & done argument
 passport.serializeUser((user, done) => {
-    // error object, uniquly user_id by mongo not googleId
+    // arrow object, uniquly user_id by mongo not googleId
     // user.id is the identify token
     done(null, user.id);
 });
 
-// take token(id) out and back to user model instance
+// take token(id) out and back to user model instance,Function we write to turn user id into a user
+// returning user
 // mongoose is Asychronous, use then after
 passport.deserializeUser((id, done) => {
     User.findById(id).then(user => {
@@ -44,30 +45,30 @@ passport.use(
         // callback
         // Google strategey run sign, terminals
         // accessToken, user allow us to do sth(send/del email ...)
-        (accessToken, refreshToken, profile, done) => {
+        // mark as async nature
+        async (accessToken, refreshToken, profile, done) => {
             // search all the records over user collection
             // if exists skip below, if not excute below
             // findOne return a promise, handel asychronisy
             // existingUser : a model instance of existingUser in MongoDB
-            User.findOne({ googleId: profile.id }).then((existingUser) => {
-                if (existingUser) {
-                    // already have a recored with the givn profile ID
-                    // tell passport it is finished, null is no error
-                    done(null, existingUser);
-                } else {
-                    // not have this user, existing users is null
-                    // create user in the database
-                    new User({
-                        // new mongoose model instance
-                        googleId: profile.id,
-                        name: profile.displayName,
-                        // save() model instance 正式对应到mongoDB collection object
-                    }).save()
-                        // second model instance, user User are same record
-                        // user from database
-                        .then(user => done(null, user));
-                }
-            });
+            const existingUser = await User.findOne({ googleId: profile.id })
+
+            if (existingUser) {
+                // already have a recored with the givn profile ID
+                // tell passport it is finished, null is no error
+                return done(null, existingUser);
+            }
+            // not have this user, existing users is null
+            // create user in the database
+            const user = await new User({
+                // new mongoose model instance
+                googleId: profile.id,
+                name: profile.displayName,
+                // save() model instance 正式对应到mongoDB collection object
+            }).save()
+            // second model instance, user User are same record
+            // user from database
+            done(null, user);
 
         }
     )
