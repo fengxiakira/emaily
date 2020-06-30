@@ -1,6 +1,8 @@
 // Header component
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+// Link tags, app 内部的navigation,'react-router' inside the browsers
+import { Link } from 'react-router-dom'
 
 class Header extends Component {
     // helper method, show state in header
@@ -14,7 +16,7 @@ class Header extends Component {
             // logged in user model
             default:
                 // billing
-                return <li><a>Log out</a></li>;
+                return <li><a href="/api/logout">Log out</a></li>;
 
         }
     }
@@ -25,8 +27,12 @@ class Header extends Component {
         return (
             <nav>
                 <div className="nav-wrapper">
-                    <a href="#" className="brand-logo">Emaily</a>
-                    {/* hide-on-med-and-down */}
+                    <Link
+                        to={this.props.auth ? "/surveys" : "/"}
+                        className="left brand-logo"
+                    >
+                        Emaily
+                    </Link>
                     <ul id="nav-mobile" className="right ">
                         {this.renderContent()}
 

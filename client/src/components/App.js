@@ -12,10 +12,12 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import { connect } from 'react-redux'
 // take all actions we defined, and assign them to object actions.
 import * as actions from '../actions'
+// Landing component
+import Landing from './Landing'
 
 import Header from './Header'
 const Dashboard = () => <h2>Dashboard</h2>
-const Landing = () => <h2>Landing</h2>
+
 const SurveyNew = () => <h2>SurveyNew</h2>
 
 // create functional component
