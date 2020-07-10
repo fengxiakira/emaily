@@ -57,11 +57,11 @@ if (process.env.NODE_ENV === 'production') {
     // like main.js / main.css
     // look up in the client/build folder
     // Each app.use(middleware) is called every time a request is sent to the server.
+    const path = require('path')
     app.use(express.static(path.resolve(__dirname, '../client/build')))
 
     // Express will server up index.html 
-    // if it doesn't recognize the route
-    const path = require('path')
+    // if it doesn't recognize the route    
     // 上面三个【require, require, app.use(express.static)都fail
     // 寻找path所有可能性，give back index.html
     app.get('*', (req, res) => {
