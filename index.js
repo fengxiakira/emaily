@@ -57,7 +57,7 @@ if (process.env.NODE_ENV === 'production') {
     // like main.js / main.css
     // look up in the client/build folder
     // Each app.use(middleware) is called every time a request is sent to the server.
-    app.use(express.static('client/build'))
+    app.use(express.static(path.resolve(__dirname, '../client/build')))
 
     // Express will server up index.html 
     // if it doesn't recognize the route
@@ -68,7 +68,7 @@ if (process.env.NODE_ENV === 'production') {
         // path.resolve(), resolveing path segment with the current directory
         // __dirname : folder name
         // __dirname/client/build/index.html
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+        res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))
     })
 
 }
