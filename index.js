@@ -51,6 +51,28 @@ app.use(passport.session());
 require('./routes/authRoute')(app);
 require('./routes/billingRoutes')(app);
 
+// configuration for Express in produ
+if (process.env.NODE_ENV === 'production') {
+    // Express will server up production assets[specific file]
+    // like main.js / main.css
+    // look up in the client/build folder
+    // Each app.use(middleware) is called every time a request is sent to the server.
+    app.use(express.static('client/build'))
+
+    // Express will server up index.html 
+    // if it doesn't recognize the route
+    const path = require('path')
+    // 上面三个【require, require, app.use(express.static)都fail
+    // 寻找path所有可能性，give back index.html
+    app.get('*', (req, res) => {
+        // path.resolve(), resolveing path segment with the current directory
+        // __dirname : folder name
+        // __dirname/client/build/index.html
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+
+}
+
 
 // node that it wants to listen for incoming traffic on port 5000
 // app.listen(5000);
