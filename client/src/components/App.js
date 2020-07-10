@@ -39,8 +39,6 @@ class App extends Component {
 
     render() {
         return (
-            // css
-            // container : add space, top level
             <div className="container">
                 <BrowserRouter>
                     <div>
