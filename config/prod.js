@@ -1,4 +1,4 @@
-import { stripePublishableKey } from './dev';
+// import { stripePublishableKey } from './dev';
 // production keys here
 module.exports = {
     // process environment varible
