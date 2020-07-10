@@ -28,3 +28,4 @@ ReactDOM.render(
     // provider is a react component
     <Provider store={store}><App /></Provider>,
     document.querySelector('#root'));
+

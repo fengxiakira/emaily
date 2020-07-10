@@ -1,3 +1,5 @@
 # not commit folder node_modules
 node_modules
 dev.js
+.env.development
+.env.production

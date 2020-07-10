@@ -1,4 +1,4 @@
-// root file
+// root file, list all dependencies/modules
 // import express, require to get access to express library
 // deployment target https://git.heroku.com/still-castle-71616.git
 const express = require("express");
@@ -9,6 +9,8 @@ const mongoose = require("mongoose");
 const cookieSessions = require("cookie-session");
 // passport to track user login statuses
 const passport = require("passport");
+// express middleware
+const bodyParser = require("body-parser");
 
 
 // models(collection in MongoDB)
@@ -20,6 +22,11 @@ require('./services/passport');
 mongoose.connect(keys.mongoURI);
 // create express app
 const app = express();
+
+// app.use wrap middleware
+// Returns middleware that only parses json and only looks at requests
+// the billingRoutes req is 
+app.use(bodyParser.json());
 
 // implement authentication flow by enabling cookies inside of our application
 // app.use wrap middleware. middleware is prcessing to request 
@@ -42,6 +49,7 @@ app.use(passport.session());
 
 // attach require 内的function to app,也就是express()
 require('./routes/authRoute')(app);
+require('./routes/billingRoutes')(app);
 
 
 // node that it wants to listen for incoming traffic on port 5000

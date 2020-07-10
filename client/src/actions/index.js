@@ -20,8 +20,20 @@ export const fetchUser = () => async (dispatch) => {
     //     // dipatch an action after ajax request completed,asynchrouous
     //     .then(res => dispatch({ type: FETCH_USER, payload: res }))
     //  res is the output of axios
+    // res.data is user model
     const res = await axios.get('/api/current_user')
     dispatch({ type: FETCH_USER, payload: res.data });
 };
+
+// response sends back user
+export const handleToken = (token) => async dispatch => {
+    // made a post request to back end server
+    // first: url second: the entire token we got back from stripe 
+    const res = await axios.post('/api/stripe', token)
+    // get back the same user model as fetchUser
+    dispatch({ type: FETCH_USER, payload: res.data })
+
+
+}
 
 
