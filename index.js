@@ -59,7 +59,7 @@ if (process.env.NODE_ENV === 'production') {
     // Each app.use(middleware) is called every time a request is sent to the server.
     const path = require('path');
 
-    app.use(express.static(path.resolve(__dirname, '../client/build')));
+    app.use(express.static('client/build'));
 
 
     // Express will server up index.html 
