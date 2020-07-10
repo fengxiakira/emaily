@@ -53,25 +53,18 @@ require('./routes/billingRoutes')(app);
 
 // configuration for Express in produ
 if (process.env.NODE_ENV === 'production') {
-    // Express will server up production assets[specific file]
-    // like main.js / main.css
-    // look up in the client/build folder
-    // Each app.use(middleware) is called every time a request is sent to the server.  
+    // Express will serve up production assets
+    // like our main.js file, or main.css file!
+
     const path = require('path');
+
     app.use(express.static(path.resolve(__dirname, '../client/build')));
 
-
-    // Express will server up index.html 
-    // if it doesn't recognize the route    
-    // 上面三个【require, require, app.use(express.static)都fail
-    // 寻找path所有可能性，give back index.html
-    // // path.resolve(), resolveing path segment with the current directory
-    //     // __dirname : folder name
-    //     // __dirname/client/build/index.html
+    // Express will serve up the index.html file
+    // if it doesn't recognize the route
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
     });
-
 }
 
 
