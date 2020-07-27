@@ -13,6 +13,7 @@ const bodyParser = require("body-parser");
 
 // models(collection in MongoDB)
 require('./models/user');
+require('./models/Survey');
 // passport.js haven't any output,不需要赋给const
 require('./services/passport');
 
