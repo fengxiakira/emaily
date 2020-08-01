@@ -49,6 +49,7 @@ app.use(passport.session());
 // attach require 内的function to app,也就是express()
 require('./routes/authRoute')(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 // configuration for Express in produ
 if (process.env.NODE_ENV === 'production') {
