@@ -47,8 +47,6 @@ class Header extends Component {
                         {this.renderContent()}
 
                     </ul>
-
-
                 </div>
             </nav>
 

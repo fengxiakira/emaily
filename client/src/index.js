@@ -15,6 +15,9 @@ import App from "./components/App";
 import reducers from './reducers';
 // action creater, modify states
 
+// axios helpers.
+import axios from 'axios';
+window.axios = axios;
 
 // reducer, state, applyMiddleware
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));

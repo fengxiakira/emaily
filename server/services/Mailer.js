@@ -27,11 +27,11 @@ class Mailer extends helper.Mail {
     }
 
     addClickTracking() {
-        const trackSettings = new helper.TrackingSettings();
+        const trackingSettings = new helper.TrackingSettings();
         const clickTracking = new helper.ClickTracking(true, true)
 
-        trackSettings.setClickTracking(clickTracking);
-        this.addTrackingSettings(trackingSettings)
+        trackingSettings.setClickTracking(clickTracking);
+        this.addTrackingSettings(trackingSettings);
     }
 
     addRecipients() {
@@ -55,7 +55,7 @@ class Mailer extends helper.Mail {
         })
 
         // send thing to sendgrid
-        const response = this.sgApi.API(request)
+        const response = await this.sgApi.API(request)
         return response;
     }
 
