@@ -3,8 +3,11 @@
 import { combineReducers } from 'redux'
 // default import, It only works if A has the default export:
 import authReducer from './authReducer'
+// import redux form
+import {reducer as reduxForm} from 'redux-form'
 
 // keys in state object
 export default combineReducers({
-    auth: authReducer
+    auth: authReducer,
+    form: reduxForm
 });
