@@ -3,17 +3,16 @@ import React, { Component } from "react";
 import { reduxForm, Field } from "redux-form";
 import { Link } from "react-router-dom"
 import SurveyField from "./SurveyField";
-import _ from "lodash";
-
-const FIELDS = [{ label : "Survey Title" , name : "title" }, 
-{ label : "Subject Line", name : "subject"},
-{ label : "Email Body", name : "body"},
-{ label : "Recipient List", name : "emails"}]
+import validateEmail from "../../util/vaildateEmail"
+import formFields from '../constant/formFields'
 
 
+// call back of form, no need values
+// when submit, pass onSurveySubmit to handlSubmit
+// set the review state to true
 class SurveyForm extends Component {
   renderField() {
-    return _.map(FIELDS, ({ label, name}) => {
+    return formFields.map(({ label, name}) => {
         return <Field key = { name } label={ label } type = "text" name = { name } component = {SurveyField} />
     })
   }
@@ -22,7 +21,7 @@ class SurveyForm extends Component {
     return (
       <div>
         <form
-          onSubmit={this.props.handleSubmit((values) => console.log(values))}
+          onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}
         >
           {this.renderField()}
           <Link to = "/surveys" className="red btn-flat left white-text">
@@ -40,14 +39,21 @@ class SurveyForm extends Component {
   }
 }
 
+// errors 
 function validate(values){
-    // errors 
+    
     const errors = {}
-    // validate values,defend-coding
-    if(!values.title){
-        errors.title = 'You must provide a title'
-    }
 
+    // vaildate email first 
+    errors.emails = validateEmail(values.emails|| " ")
+
+    // validate each not empty item in the formFields
+    formFields.forEach(({ name, noValueError })=>{
+        if(!values[name]){
+            errors[name] = noValueError
+        }
+    })
+    
     return errors
 }
 
@@ -55,4 +61,5 @@ function validate(values){
 export default reduxForm({
   validate,  
   form: "surveyForm",
+  destroyOnUnmount: false
 })(SurveyForm);
