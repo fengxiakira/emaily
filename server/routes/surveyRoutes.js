@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const { Path } = require("path-parser");
 const { URL } = require("url");
-const { compact, uniqBy } = require("lodash");
+const { chain } = require("lodash");
 const requireLogin = require("../middlewares/requireLogin");
 const requireCredits = require("../middlewares/requireCredits");
 const Mailer = require("../services/Mailer");
@@ -19,25 +19,24 @@ module.exports = (app) => {
   });
 
   app.post("/api/surveys/webhooks", (req, res) => {
-    const allEvents = req.body.map(({ url, email }) => {
-      const pathName = new URL(url).pathname;
-      const p = new Path("/api/surveys/:surveyId/:choice");
-      const match = p.test(pathName);
-      if (match) {
-        return { email, surveyId: match.surveyId, choice: match.choice };
-      }
-    });
-    const compactEvents = compact(allEvents);
-    const uniqEvents = uniqBy(compactEvents, "email", "surveyId");
-    console.log(uniqEvents);
+    const p = new Path("/api/surveys/:surveyId/:choice");
+    const allEvents = chain(req.body)
+      .map(({ url, email }) => {
+        const match = p.test(new URL(url).pathname);
+        if (match) {
+          return { email, surveyId: match.surveyId, choice: match.choice };
+        }
+      })
+      .compact()
+      .uniqBy("email", "surveyId")
+      .value();
+    console.log(allEvents);
     res.send({});
   });
-  app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
-    // pull the properties
-    const { title, subject, body, recipients } = req.body;
 
+  app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
+    const { title, subject, body, recipients } = req.body;
     const survey = new Survey({
-      // title : title
       title,
       subject,
       body,
