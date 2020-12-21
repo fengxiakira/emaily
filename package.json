@@ -28,5 +28,9 @@
     "passport-google-oauth20": "^2.0.0",
     "sendgrid": "^5.2.3",
     "stripe": "^8.69.0"
+  },
+  "devDependencies": {
+    "lodash": "^4.17.20",
+    "path-parser": "^6.1.0"
   }
 }
