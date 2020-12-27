@@ -3,3 +3,4 @@ node_modules
 dev.js
 .env.development
 .env.production
+地址解析.txt
