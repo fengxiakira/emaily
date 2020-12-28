@@ -3,13 +3,14 @@ const headerStyle = {
   color: "black",
   maxHeight: "80%",
   background: "white",
+  height: 48,
 };
 
 const imgStyle = {
   verticalAlign: "middle",
   marginRight: 3,
-  width: 36,
-  height: 36,
+  width: 32,
+  height: 32,
 };
 
 const btnStyle = "btn flow-text";

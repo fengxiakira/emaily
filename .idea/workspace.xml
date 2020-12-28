@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4d1a9676-61fd-46bf-b138-494cf931174c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/survey.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +36,7 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -78,7 +77,8 @@
       <workItem from="1608422859708" duration="1483000" />
       <workItem from="1608479615678" duration="5068000" />
       <workItem from="1608748030228" duration="4869000" />
-      <workItem from="1609090502122" duration="19661000" />
+      <workItem from="1609090502122" duration="20370000" />
+      <workItem from="1609172037408" duration="7062000" />
     </task>
     <task id="LOCAL-00001" summary="Refine SurveyFormReview to show the survey content">
       <created>1608257672059</created>
@@ -150,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609100315409</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Refine Header">
+      <created>1609116668901</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1609116668901</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,7 +201,8 @@
     <MESSAGE value="Test MongoDB" />
     <MESSAGE value="Fetch a list of surveys" />
     <MESSAGE value="User can see survey result&#10;- Reverse survey list&#10;- fix the visual bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="User can see survey result&#10;- Reverse survey list&#10;- fix the visual bug" />
+    <MESSAGE value="Refine Header" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refine Header" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
