@@ -12,6 +12,14 @@ const imgStyle = {
   height: 36,
 };
 
+const footerStyle = {
+  position: "fixed",
+  left: 0,
+  bottom: 0,
+  width: "100% ",
+  textAlign: "center",
+};
+
 const btnStyle = "btn flow-text";
 
-module.exports = { headerStyle, imgStyle, btnStyle };
+module.exports = { headerStyle, imgStyle, btnStyle, footerStyle };

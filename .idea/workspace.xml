@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4d1a9676-61fd-46bf-b138-494cf931174c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/survey.png" afterDir="false" />
+    <list default="true" id="4d1a9676-61fd-46bf-b138-494cf931174c" name="Default Changelist" comment="Fix NavBar">
+      <change afterPath="$PROJECT_DIR$/client/src/macaroni-sign-up.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/Landing.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Landing.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="c3738e0e8595d644d6b8a61cda459dfa3db4e12b" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lnxyGZW0TqteunscLWpMGmiqIK" />
@@ -58,6 +61,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -194,7 +198,8 @@
     <MESSAGE value="Test MongoDB" />
     <MESSAGE value="Fetch a list of surveys" />
     <MESSAGE value="User can see survey result&#10;- Reverse survey list&#10;- fix the visual bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="User can see survey result&#10;- Reverse survey list&#10;- fix the visual bug" />
+    <MESSAGE value="Fix NavBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix NavBar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

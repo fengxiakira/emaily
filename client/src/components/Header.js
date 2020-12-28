@@ -46,10 +46,7 @@ class Header extends Component {
     return (
       <nav className="z-depth-0 black-text" style={headerStyle}>
         <div class="nav-wrapper">
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            className="left brand-logo"
-          >
+          <Link to={this.props.auth ? "/surveys" : "/"} className="left">
             <div>
               <img src={logo} alt="logo" style={imgStyle} />
               <span className="black-text">Emaily</span>
