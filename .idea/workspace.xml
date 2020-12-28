@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4d1a9676-61fd-46bf-b138-494cf931174c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/constant/styleConstant.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="c3738e0e8595d644d6b8a61cda459dfa3db4e12b" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1lnxyGZW0TqteunscLWpMGmiqIK" />
@@ -36,7 +38,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="/usr/local/lib/node_modules/prettier" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -58,6 +59,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -77,8 +79,7 @@
       <workItem from="1608422859708" duration="1483000" />
       <workItem from="1608479615678" duration="5068000" />
       <workItem from="1608748030228" duration="4869000" />
-      <workItem from="1609090502122" duration="20370000" />
-      <workItem from="1609172037408" duration="7062000" />
+      <workItem from="1609090502122" duration="19661000" />
     </task>
     <task id="LOCAL-00001" summary="Refine SurveyFormReview to show the survey content">
       <created>1608257672059</created>
@@ -150,12 +151,12 @@
       <option name="project" value="LOCAL" />
       <updated>1609100315409</updated>
     </task>
-    <task id="LOCAL-00011" summary="Refine Header">
-      <created>1609116668901</created>
+    <task id="LOCAL-00011" summary="Fix NavBar">
+      <created>1609185643872</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1609116668901</updated>
+      <updated>1609185643872</updated>
     </task>
     <option name="localTasksCounter" value="12" />
     <servers />
@@ -179,10 +180,16 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="master" />
+                        <option value="temp-branch" />
                       </list>
                     </value>
                   </entry>
+                </map>
+              </option>
+              <option name="COLUMN_ID_WIDTH">
+                <map>
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="115" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="167" />
                 </map>
               </option>
             </State>
@@ -201,8 +208,8 @@
     <MESSAGE value="Test MongoDB" />
     <MESSAGE value="Fetch a list of surveys" />
     <MESSAGE value="User can see survey result&#10;- Reverse survey list&#10;- fix the visual bug" />
-    <MESSAGE value="Refine Header" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refine Header" />
+    <MESSAGE value="Fix NavBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix NavBar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

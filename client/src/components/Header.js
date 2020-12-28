@@ -1,13 +1,13 @@
 // Header component
 import React, { Component } from "react";
 import { connect } from "react-redux";
+// Link tags, app 内部的navigation,'react-router' inside the browsers
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
 import { headerStyle, imgStyle } from "./constant/styleConstant";
 import logo from "../survey.png";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
+
+const btnStyle = "btn flow-text";
 
 class Header extends Component {
   // helper method, show state in header
@@ -44,37 +44,20 @@ class Header extends Component {
   render() {
     console.log(this.props);
     return (
-      <Navbar
-        bg="light"
-        expand="md"
-        style={headerStyle}
-        className="z-depth-0 black-text"
-      >
-        <Navbar.Brand>
-          <Link
-            to={this.props.auth ? "/surveys" : "/"}
-            style={{ color: "black", fontSize: "1.8rem" }}
-          >
-            <img
-              src={logo}
-              alt="logo"
-              className="d-inline-block align-baseline"
-              style={imgStyle}
-            />
-            Emaily
+      <nav className="z-depth-0 black-text" style={headerStyle}>
+        <div class="nav-wrapper">
+          <Link to={this.props.auth ? "/surveys" : "/"} className="left">
+            <div>
+              <img src={logo} alt="logo" style={imgStyle} />
+              <span className="black-text">Emaily</span>
+            </div>
           </Link>
-        </Navbar.Brand>
 
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-
-        <ul id="nav-mobile" className="right black-text">
-          {this.renderContent()}
-        </ul>
-      </Navbar>
+          <ul id="nav-mobile" className="right black-text">
+            {this.renderContent()}
+          </ul>
+        </div>
+      </nav>
     );
   }
 }
