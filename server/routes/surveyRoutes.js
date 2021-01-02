@@ -25,6 +25,7 @@ module.exports = (app) => {
     res.send("Thank you for your feedback!");
   });
 
+  // update survey
   app.post("/api/surveys/webhooks", (req, res) => {
     const p = new Path("/api/surveys/:surveyId/:choice");
     chain(req.body)
@@ -56,15 +57,13 @@ module.exports = (app) => {
     res.send({});
   });
 
+  // add a post (instance)
   app.post("/api/surveys", requireLogin, requireCredits, async (req, res) => {
     const { title, subject, body, recipients } = req.body;
     const survey = new Survey({
       title,
       subject,
       body,
-      // subdoc collection
-      // email => {return {email : email}}
-      // ()for shorten object
       recipients: recipients
         .split(",")
         .map((email) => ({ email: email.trim() })),
@@ -88,5 +87,14 @@ module.exports = (app) => {
     } catch (err) {
       res.status(422).send(err);
     }
+  });
+
+  //  delete a post
+  app.delete("/api/delete/:surveyId", requireLogin, async (req, res) => {
+    await Survey.deleteOne({ _id: req.params.id });
+    const surveys = await Survey.find({ _user: req.user.id }).select({
+      recipients: false,
+    });
+    res.send(surveys);
   });
 };

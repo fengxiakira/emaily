@@ -1,6 +1,6 @@
 // ajax request
 import axios from "axios";
-import { FETCH_USER, FETCH_SURVEYS } from "./types";
+import { FETCH_USER, FETCH_SURVEYS, DELETE_SURVEYS } from "./types";
 
 // action creater
 // arrow function assign to fetchUser variable
@@ -45,4 +45,10 @@ export const submitSurvey = (values, history) => async (dispatch) => {
 export const fetchSurveys = () => async (dispatch) => {
   const res = await axios.get("/api/surveys");
   dispatch({ type: FETCH_SURVEYS, payload: res.data });
+};
+
+export const deleteSurveys = (id) => async (dispatch) => {
+  const res = await axios.delete(`/api/surveys/delete/${id}`);
+  dispatch({ type: FETCH_SURVEYS, payload: res.data });
+  console.log(res);
 };
