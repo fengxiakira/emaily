@@ -12,7 +12,6 @@ const Survey = mongoose.model("surveys");
 
 // user is logged in & have credits
 // mayhave addtional routes in future
-// after mail send, send survey to database
 module.exports = (app) => {
   app.get("/api/surveys", requireLogin, async (req, res) => {
     const surveys = await Survey.find({ _user: req.user.id }).select({
@@ -90,11 +89,15 @@ module.exports = (app) => {
   });
 
   //  delete a post
-  app.delete("/api/delete/:surveyId", requireLogin, async (req, res) => {
-    await Survey.deleteOne({ _id: req.params.id });
-    const surveys = await Survey.find({ _user: req.user.id }).select({
-      recipients: false,
-    });
-    res.send(surveys);
-  });
+  app.delete(
+    "/api/surveys/delete/:surveyId",
+    requireLogin,
+    async (req, res) => {
+      await Survey.deleteOne({ _id: req.params.surveyId });
+      const surveys = await Survey.find({ _user: req.user.id }).select({
+        recipients: false,
+      });
+      res.send(surveys);
+    }
+  );
 };

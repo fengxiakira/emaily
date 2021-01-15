@@ -3,12 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4d1a9676-61fd-46bf-b138-494cf931174c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/surveys/SurveyList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/surveys/SurveyList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/middlewares/requireLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/middlewares/requireLogin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/routes/surveyRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/surveyRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/services/Mailer.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/services/Mailer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +80,8 @@
       <workItem from="1608479615678" duration="5068000" />
       <workItem from="1608748030228" duration="4869000" />
       <workItem from="1609090502122" duration="19661000" />
-      <workItem from="1609256431672" duration="20645000" />
+      <workItem from="1609256431672" duration="20707000" />
+      <workItem from="1610683492607" duration="1049000" />
     </task>
     <task id="LOCAL-00001" summary="Refine SurveyFormReview to show the survey content">
       <created>1608257672059</created>
@@ -171,7 +167,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609187218970</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Bugs on deleting surveys">
+      <created>1609613457025</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1609613457025</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +226,8 @@
     <MESSAGE value="User can see survey result&#10;- Reverse survey list&#10;- fix the visual bug" />
     <MESSAGE value="Fix NavBar" />
     <MESSAGE value="Fix path-parser" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix path-parser" />
+    <MESSAGE value="Bugs on deleting surveys" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugs on deleting surveys" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
